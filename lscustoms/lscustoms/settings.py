@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todasreparaciones'
+    'todasreparaciones',
     'bootstrap5'
 ]
 
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'Americas/Santiago'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
