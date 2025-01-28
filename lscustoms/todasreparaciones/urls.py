@@ -1,9 +1,11 @@
 from django.urls import path
-from . import vistas
+from . import views
 
 
 urlpatterns = [
-    path(''vistas.main, name="main"),
-    path('todasreparaciones/detallerep/<int:id>',vistas.detalle_reparacion, name="detallerep"),
-    path
+    path('',views.main, name="main"),
+    path('todasreparaciones/detallerep/<int:id>',views.detalle_reparacion, name="detallerep"),
+    path('login', views.login, name='login'),
+    path('logout', views.logout, name='logout'),
+    path('registro', views.registro, name='registro'),
 ]

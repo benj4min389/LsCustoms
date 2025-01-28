@@ -15,11 +15,18 @@
 </head>
 <body>
     <div class="container">
-        <ul class="nav bg-warning">
-            <li class="nav-item"><a class="nav-link link-light"  href="/">home</a></li>
-            <li class="nav-item"><a class="nav-link link-light"  href="/todaslasreparaciones"></a></li>
-            <li class="nav-item"><a class="nav-link link-light"  href="/formulario-adreparacion">Añadir reparacion</a></li>
-
+        <ul class="nav bg-info">
+            <li class="nav-item"><a class="nav-link link-light" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link link-light" href="/todasreparaciones">trabajos realizados</a></li>
+            {% if request.session.usuario_tipousuario == 'admin'  %}
+                <li class="nav-item"><a class="nav-link link-light" href="/">Crear miembros</a></li>
+            {% endif %}
+            {% if request.session.usuario_id %}
+                <li class="nav-item"><a class="nav-link link-light" href="/logout">Logout</a></li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link link-light" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link link-light" href="/registro">Registro</a></li>
+            {% endif %}
         </ul>
     </div>
     
