@@ -19,6 +19,15 @@ def detalle_reparacion(request, patente):
     context = {'patente': patente}
     return HttpResponse(template.render(context, request))
 
+def requiere_usuario(tipo_requerido):
+    def decorator(func):
+        def wrapper(request, *args, **kwargs):
+            if 'usuario_tipousuario' not in request.session or request.session['usuario_tipousuario'] != tipo_requerido:
+                return redirect('main')
+            return func(request, *args, **kwargs)
+        return wrapper
+    return decorator
+
 
 def crear_miembro(request):
     template = loader.get_template("formulario-tusuario.html")

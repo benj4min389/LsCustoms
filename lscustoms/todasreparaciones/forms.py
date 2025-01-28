@@ -30,8 +30,9 @@ class RegistroForm(forms.Form):
 
 
 class AddrepForm(forms.Form):
+    id = forms.IntegerField(max_value=100)
     marca = forms.CharField(max_length=20)
     modelo_vehiculo = forms.CharField(max_length=50)
     patente = forms.CharField(max_length=6)
     motivo = forms.CharField(max_length=50)
-    
+
