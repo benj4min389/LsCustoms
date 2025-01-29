@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block titulo %}
+    Detalle mecanico
+{% endblock %}
+
+{% block contenido %}
+    <header>
+        <h1>{{miembros.firstname}} {{miembros.lastname}}</h1>
+    </header>
+
+    <main>
+        <p>Teléfono: {{miembros.phone}}</p>
+        <p>Fecha de inscripción: {{mymember.joined_date}}</p>
+        <p>Volver a <a href="/miembro">todos los mecanicos</a></p>
+    </main>
+{% endblock %}

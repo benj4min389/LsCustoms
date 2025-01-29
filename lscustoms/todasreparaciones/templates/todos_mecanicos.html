@@ -6,28 +6,17 @@
     
 {% block contenido %}
     <header>
-        <a href="/crear_miembro">Crear miembro</a>
-        <h1>Members</h1>
+        <a href="/crear_miembro">Crear mecanico</a>
+        <h1>Mecanicos</h1>
     </header>
 
     <main>
         <ul>
             {% for m in miembros %}
-                <li> <a href="details/{{m.id}}">{{m.id}}</a> {{ m.firstname }} {{m.lastname}}</li>
+                <li> <a href="detalle_mecanico/">{{m.id}}</a> {{ m.firstname }} {{m.lastname}}</li>
             {% endfor %}
         </ul>
     </main>
 
-    <main>
-        <h2>EJEMPLO CON UN FILTRO</h2>
-        <ul>
-            {% for m in miembros %}
-                {% if m.firstname == "luis" %}
-                    <li> <a href="details/{{m.id}}">{{m.id}}</a> {{ m.firstname }} {{m.lastname}}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </main>
 
-    <footer></footer>
 {% endblock %}

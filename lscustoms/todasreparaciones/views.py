@@ -36,7 +36,7 @@ def requiere_usuario(tipo_requerido):
 
 
 def crear_miembro(request):
-    template = loader.get_template("formulario-tusuario.html")
+    template = loader.get_template("formulario-tipusuario.html")
     if request.method == 'GET':
         form = MiembroForm (request.GET)
         if form.is_valid():
@@ -134,5 +134,10 @@ def registro(request):
         form = RegistroForm()
         context = {'form': form}
         return HttpResponse( template.render(context, request) )
+    
+def todas_reparaciones(request):
+    template = loader.get_template('todasreparaciones.html')
+    context = {'valor': 10}
+    return HttpResponse( template.render(context, request) )
 
 

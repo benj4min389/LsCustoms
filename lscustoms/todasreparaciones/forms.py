@@ -23,6 +23,7 @@ class RegistroForm(forms.Form):
     firstname = forms.CharField(max_length=50)
     lastname = forms.CharField(max_length=50)
     phone = forms.IntegerField(required=False)
+    especialidad = forms.CharField(max_length=50)
     joined_date = forms.DateField(required=False)
     email = forms.EmailField()
     password = forms.CharField(max_length=16)
