@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container">
-        <ul class="nav bg-info">
+        <ul class="nav bg-warning">
             <li class="nav-item"><a class="nav-link link-light" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link link-light" href="/todasreparaciones">trabajos realizados</a></li>
             {% if request.session.usuario_tipousuario == 'admin'  %}
@@ -29,6 +29,7 @@
             {% endif %}
         </ul>
     </div>
-    
+    {% block contenido %}
+    {% endblock %}
 </body>
 </html>

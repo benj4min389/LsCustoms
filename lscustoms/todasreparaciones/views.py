@@ -11,10 +11,16 @@ def principal(request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
 
+def miembro(request):
+    miembros = Miembro.objects.all().values()
+    template = loader.get_template('all_members.html')
+    context = {'miembros': miembros}
+    return HttpResponse( template.render(context,request) )
+
 
 # vamos a rescatar este bloque para hacer el detalle de cada reparacion
 def detalle_reparacion(request, patente):
-    mymember = Miembro.objects.get(patente=patente)
+    miembros = Miembro.objects.get(patente=patente)
     template = loader.get_template('detallerep.html')
     context = {'patente': patente}
     return HttpResponse(template.render(context, request))
@@ -104,7 +110,7 @@ def registro(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             repeat_pass = form.cleaned_data['repeat_password']
-            tipo_usuario = "jugador"
+            tipo_usuario = "mecanico"
             if password!=repeat_pass:
 
                 form = RegistroForm()
@@ -128,3 +134,5 @@ def registro(request):
         form = RegistroForm()
         context = {'form': form}
         return HttpResponse( template.render(context, request) )
+
+
