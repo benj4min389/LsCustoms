@@ -1,5 +1,9 @@
 ### Los Santos customs
 
+##contexto
+un grupo de amigos recien egreasados de duoc uc abren un taller mecanico, debido a su gran exito deciden abrir una pagina web
+para agilizar sus cotizaciones y solicitudes de reparacion por ende se nos solicita una pagina capaz de realizar diversas solicitudes en base 
+a reparaciones mecanicas y automotrices.
 
 ## Instalación
 
