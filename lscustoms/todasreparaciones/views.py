@@ -34,7 +34,7 @@ def requiere_usuario(tipo_requerido):
         return wrapper
     return decorator
 
-
+@requiere_usuario('admin')
 def crear_miembro(request):
     template = loader.get_template("formulario-tipusuario.html")
     if request.method == 'GET':
@@ -47,7 +47,7 @@ def crear_miembro(request):
             joined_date = form.cleaned_data['joined_date']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            rep_password = form.cleaned_data['repeat_password']
+            rep_password = form.cleaned_data['rep_password']
             tipo_usuario = form.cleaned_data['tipo_usuario']
             if password!=rep_password:
                 #debería enviar una alerta de error de contraseñas: misión de ustedes:
@@ -63,7 +63,7 @@ def crear_miembro(request):
                                 password=rep_password,
                                 tipo_usuario=tipo_usuario)
                 miembro.save()
-                return redirect('members')
+                return redirect('index.html')
         else:
             form = MiembroForm()
             context = {'form': form}
@@ -109,22 +109,22 @@ def registro(request):
             joined_date = form.cleaned_data['joined_date']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            repeat_pass = form.cleaned_data['repeat_password']
+            rep_password = form.cleaned_data['rep_password']
             tipo_usuario = "mecanico"
-            if password!=repeat_pass:
+            if password!=rep_password:
 
                 form = RegistroForm()
                 context = {'form': form}
                 return HttpResponse(template.render(context, request))
             else:
-                member = Miembro(firstname=firstname, 
+                miembro = Miembro(firstname=firstname, 
                                 lastname=lastname,
                                 phone=phone,
                                 joined_date=joined_date,
                                 email=email,
-                                password=repeat_pass,
+                                password=rep_password,
                                 tipo_usuario=tipo_usuario)
-                member.save()
+                miembro.save()
                 return redirect('login')
         else:
             form = RegistroForm()

@@ -8,4 +8,4 @@ class Miembro(models.Model):
     joined_date = models.DateField(null=True)
     email = models.EmailField()
     password = models.CharField(max_length=16)
-    type_user = models.CharField(max_length=50)
+    tipo_usuario = models.CharField(max_length=50)
