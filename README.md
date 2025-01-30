@@ -1,4 +1,7 @@
 ### Los Santos customs
+  <p align="left">
+   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+   </p>
 
 ## contexto
 un grupo de amigos recien egreasados de duoc uc abren un taller mecanico, debido a su gran exito deciden abrir una pagina web
